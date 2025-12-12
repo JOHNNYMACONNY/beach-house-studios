@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+    /* Square Harmony Scheme */
+    --color-primary: #F59E0B;
+    /* Amber-500 (60deg) */
+    --color-secondary: #6366F1;
+    /* Indigo-500 (240deg) */
+    --color-accent-cool: #10B981;
+    /* Emerald-500 (150deg) */
+    --color-accent-warm: #F43F5E;
+    /* Rose-500 (330deg) */
+
+    --color-brand-orange: var(--color-primary);
+    /* Legacy mapping */
+    --color-background: #0A0A0A;
+    --color-text: #F5F5F5;
+
+    --font-display: "Instrument Serif", serif;
+    --font-body: "Inter", sans-serif;
+
+    /* Animations */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInSlideBlur {
+        0% {
+            opacity: 0;
+            transform: translateY(40px);
+            filter: blur(8px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+    }
+
+    --animate-fade-in: fade-in 0.6s ease-out forwards;
+    --animate-fade-in-slide-blur: fadeInSlideBlur 0.8s ease-out forwards;
+}
+
+/* Utilities */
+.font-display {
+    font-family: var(--font-display);
+}
+
+.font-body {
+    font-family: var(--font-body);
+}
+
+/* Animation Classes */
+.card-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+    animation: fadeInSlideBlur 0.8s ease-out forwards;
+}
+
+.card-animate:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.card-animate:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card-animate:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.card-animate:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.card-animate:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.card-animate:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+html,
+body {
+    @apply bg-[#0A0A0A] text-[#F5F5F5] font-body antialiased;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #F59E0B;
+}
+
+/* Premium Button Styles */
+.btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-500 px-8 py-4 font-bold uppercase tracking-wider text-black shadow-lg shadow-amber-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-500/40 hover:brightness-110 cursor-pointer;
+}
+
+.btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 font-medium uppercase tracking-wider text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/40 hover:-translate-y-0.5 cursor-pointer;
+}

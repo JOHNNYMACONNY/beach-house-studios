@@ -1,0 +1,71 @@
+---
+import siteData from '../data/site-data.json';
+import MindfulCard from './MindfulCard.astro';
+const { services } = siteData.sections;
+---
+<section id="services" class="py-24 px-6 bg-[#0A0A0A]">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-16">
+            <h2 class="font-display text-5xl md:text-7xl text-white">SERVICES</h2>
+            <span class="hidden md:block text-gray-500 font-mono">01 — 03</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {services.map((service, index) => {
+                // Square Harmony: Cool Axis (Emerald & Indigo)
+                const colors = [
+                    { bg: 'bg-emerald-900/20', border: 'border-emerald-500/20', text: 'text-emerald-200', title: 'text-emerald-100', accent: 'bg-emerald-500' },
+                    { bg: 'bg-indigo-900/20', border: 'border-indigo-500/20', text: 'text-indigo-200', title: 'text-indigo-100', accent: 'bg-indigo-500' },
+                    { bg: 'bg-rose-900/20', border: 'border-rose-500/20', text: 'text-rose-200', title: 'text-rose-100', accent: 'bg-rose-400' }
+                ];
+                
+                const images = [
+                    '/images/studio-room.jpg',
+                    '/images/gear-synths.jpg',
+                    '/images/gear-piano.jpg'
+                ];
+
+                const color = colors[index % colors.length];
+                const image = images[index % images.length];
+
+                return (
+                    <MindfulCard 
+                        delay={`${index * 0.1}s`}
+                        class={`h-full min-h-[400px] p-8 justify-between relative overflow-hidden group/card ${color.border}`}
+                    >
+                        <!-- Background Image -->
+                        <div class="absolute inset-0 z-0">
+                            <img src={image} alt={service.title} class="w-full h-full object-cover opacity-30 transition-transform duration-700 group-hover/card:scale-110 grayscale hover:grayscale-0" />
+                            <div class={`absolute inset-0 ${color.bg} opacity-90 mix-blend-multiply`}></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80"></div>
+                        </div>
+
+                        <div class="relative z-10 space-y-6">
+                            <div class="flex items-center justify-between">
+                                <div class={`w-2 h-2 rounded-full ${color.accent}`}></div>
+                                <span class={`text-sm font-mono ${color.text}`}>0{index + 1}</span>
+                            </div>
+                            
+                            <h3 class={`text-3xl font-display font-medium ${color.title}`}>
+                                {service.title}
+                            </h3>
+                        </div>
+
+                        <div class="relative z-10 space-y-4 pt-12">
+                            <p class={`text-sm leading-relaxed font-light ${color.text} opacity-80`}>
+                                {service.desc}
+                            </p>
+                            <div class="flex items-center gap-2 group-hover:gap-4 transition-all">
+                                <span class={`text-xs uppercase tracking-widest ${color.text}`}>Explore</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class={color.text}>
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </MindfulCard>
+                );
+            })}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import siteData from '../data/site-data.json';
+
+const { hero } = siteData.sections;
+const { site_info } = siteData;
+---
+<section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 z-0">
+        <img 
+            src="/images/studio-vibe.jpg" 
+            alt="Studio Control Room" 
+            class="w-full h-full object-cover opacity-60"
+            onerror="this.src='https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop'; this.style.opacity='0.4'" 
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/50 to-transparent"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center animate-fade-in-slide-blur">
+        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight uppercase text-white mb-6">
+            {hero.headline}
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 font-light max-w-2xl mx-auto mb-10">
+            {hero.subhead}
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href={siteData.site_info.booking_url} class="btn-primary w-full sm:w-auto">
+                {siteData.sections.hero.cta_primary}
+            </a>
+            <a href="#gear" class="btn-secondary w-full sm:w-auto">
+                {hero.cta_secondary}
+            </a>
+        </div>
+    </div>
+</section>

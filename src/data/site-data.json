@@ -1,0 +1,98 @@
+{
+  "site_info": {
+    "title": "The Beach House LA",
+    "description": "A plug-and-play hybrid recording studio in Long Beach, CA.",
+    "booking_url": "https://engineears.com/studio/thebeachhousela",
+    "contact_email": "jmaconny@ybfstudio.com"
+  },
+  "sections": {
+    "hero": {
+      "headline": "PROFESSIONAL SOUND. PRIVATE SETTING.",
+      "subhead": "A plug-and-play hybrid studio in Long Beach, CA.",
+      "cta_primary": "BOOK SESSION",
+      "cta_secondary": "VIEW GEAR"
+    },
+    "value_prop": {
+      "headline": "WALK IN. PLUG IN. RECORD.",
+      "body": "We eliminated the setup time. The Beach House LA is a pre-routed, production-ready environment built for speed and texture. Analog front end, digital workflow, and instruments ready to play."
+    },
+    "about_producer": {
+      "name": "Gregory David",
+      "role": "Producer, Multi-instrumentalist, Audio Engineer",
+      "bio": "Specializing in organic, guitar-forward production for Hip-Hop, Lo-Fi, and Neo-Soul.",
+      "stats": [
+        "27 Million+ Streams",
+        "180+ Songs for Epidemic Sound",
+        "Credits: Netflix, Google, MrBeast, Aston Martin"
+      ]
+    },
+    "services": [
+      {
+        "title": "PRODUCTION",
+        "desc": "From scratch. We build the drums, layer live instrumentation, and arrange the track."
+      },
+      {
+        "title": "MIXING",
+        "desc": "Hybrid mixing workflow. We run your stems through analog gear to add weight and dimension."
+      },
+      {
+        "title": "SESSION WORK",
+        "desc": "Professional guitar, bass, and keys layers for your existing records."
+      }
+    ],
+    "amenities": [
+      "Acoustically treated mix room",
+      "Full kitchen & lounge access",
+      "Outdoor patio",
+      "Easy street parking"
+    ]
+  },
+  "gear_inventory": {
+    "categories": [
+      {
+        "title": "Hardware & Instruments",
+        "items": [
+          "Behringer Poly D (Analog Polyphonic Synth)",
+          "Ableton Push (Controller)",
+          "Korg Krome (MIDI Workstation)",
+          "5-String Bass (Flatwounds)",
+          "Harmony Lapsteel Guitar",
+          "Yamaha Cassette Recorder (Lo-Fi Texture)"
+        ]
+      },
+      {
+        "title": "Microphones",
+        "items": [
+          "RCA 74B Ribbon (Vintage Tone)",
+          "Shure SM7B (Broadcast Standard)",
+          "Warm Audio WA-19",
+          "AKG D112 (Kick/Bass)",
+          "AKG 320B",
+          "Sterling FET",
+          "Apex 205 (Ribbon)",
+          "Shure SM57 (The Workhorse)"
+        ]
+      },
+      {
+        "title": "Outboard & Monitoring",
+        "items": [
+          "Adam T7V Monitors",
+          "Alctron Mono Compressor",
+          "Lindell Pultec EQ (Hardware EQ)"
+        ]
+      },
+      {
+        "title": "Software & Plugins",
+        "items": [
+          "Xfer Records",
+          "Wavesfactory",
+          "Sugar Bytes",
+          "Korg M1 & Poly 6 (Soft Synths)",
+          "Klanghelm MJUC",
+          "Aberrant DSP",
+          "Audiomovers (Remote Sessions)"
+        ]
+      }
+    ]
+  }
+}

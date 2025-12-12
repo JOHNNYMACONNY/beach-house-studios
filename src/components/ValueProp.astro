@@ -1,0 +1,35 @@
+---
+import siteData from '../data/site-data.json';
+import MindfulCard from './MindfulCard.astro';
+const { value_prop } = siteData.sections;
+---
+<section class="py-24 px-6 bg-[#0A0A0A]">
+    <div class="max-w-4xl mx-auto">
+        <MindfulCard class="text-center p-12 md:p-20 bg-indigo-900/10 border-indigo-500/20 relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+            
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 text-indigo-200 text-sm font-medium mb-8 border border-indigo-500/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></svg>
+                    The Beach House Experience
+                </div>
+
+                <h2 class="font-display text-4xl md:text-6xl text-white mb-8 leading-tight">
+                    {value_prop.headline}
+                </h2>
+                
+                <p class="text-xl md:text-2xl text-indigo-100/80 font-light leading-relaxed max-w-2xl mx-auto">
+                    {value_prop.body}
+                </p>
+                
+                <div class="mt-12 flex flex-wrap justify-center gap-4">
+                    <span class="px-6 py-3 rounded-xl bg-indigo-950/50 border border-indigo-500/20 text-indigo-200">No Setup Time</span>
+                    <span class="px-6 py-3 rounded-xl bg-amber-950/50 border border-amber-500/20 text-amber-200">Analog Front End</span>
+                    <span class="px-6 py-3 rounded-xl bg-emerald-950/50 border border-emerald-500/20 text-emerald-200">Production Ready</span>
+                </div>
+            </div>
+        </MindfulCard>
+    </div>
+</section>

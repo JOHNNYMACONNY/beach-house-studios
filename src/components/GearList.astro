@@ -1,0 +1,66 @@
+---
+import siteData from '../data/site-data.json';
+import MindfulCard from './MindfulCard.astro';
+const { gear_inventory } = siteData;
+---
+<section id="gear" class="py-24 px-6 bg-[#0A0A0A]">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex items-center justify-between mb-16">
+            <h2 class="font-display text-5xl md:text-7xl text-white">GEAR LOCKER</h2>
+            <div class="hidden md:flex gap-2">
+                <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                <div class="w-2 h-2 rounded-full bg-rose-500"></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {gear_inventory.categories.map((category, index) => {
+                // Square Harmony: Warm Axis (Amber & Rose)
+                const isWarm = index % 2 === 0;
+                const theme = isWarm 
+                    ? { bg: 'bg-amber-900/20', border: 'border-amber-500/20', text: 'text-amber-200', title: 'text-amber-100', accent: 'bg-amber-500' }
+                    : { bg: 'bg-rose-900/20', border: 'border-rose-500/20', text: 'text-rose-200', title: 'text-rose-100', accent: 'bg-rose-500' };
+
+                const images = [
+                    '/images/gear-synths.jpg', // Hardware
+                    '/images/gear-mic.jpg',    // Mics
+                    '/images/studio-room.jpg', // Outboard (Monitors)
+                    '/images/gear-piano.jpg'   // Software
+                ];
+                const image = images[index % images.length];
+
+                return (
+                    <MindfulCard 
+                        delay={`${index * 0.2}s`}
+                        class={`p-10 relative overflow-hidden group/card ${theme.border}`}
+                    >
+                         <!-- Background Image -->
+                         <div class="absolute inset-0 z-0">
+                            <img src={image} alt={category.title} class="w-full h-full object-cover opacity-20 transition-transform duration-700 group-hover/card:scale-105 grayscale hover:grayscale-0" />
+                            <div class={`absolute inset-0 ${theme.bg} opacity-90 mix-blend-multiply`}></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent"></div>
+                        </div>
+
+                        <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-8">
+                            <h3 class={`font-display text-3xl ${theme.title}`}>{category.title}</h3>
+                            <span class={`text-xs px-3 py-1.5 rounded-full font-medium ${theme.text} bg-white/5 border border-white/5`}>
+                                {category.items.length} Items
+                            </span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            {category.items.map(item => (
+                                <div class="flex items-center gap-3 group/item hover:bg-white/5 p-2 rounded-xl transition-colors -mx-2">
+                                    <div class={`w-1.5 h-1.5 rounded-full ${theme.accent} opacity-50 group-hover/item:opacity-100 transition-opacity`}></div>
+                                    <span class="text-gray-300 font-light group-hover/item:text-white transition-colors">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                        </div>
+                    </MindfulCard>
+                );
+            })}
+        </div>
+    </div>
+</section>

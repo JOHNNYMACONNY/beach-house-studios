@@ -1,0 +1,24 @@
+---
+interface Props {
+  class?: string;
+  style?: string;
+  delay?: string;
+}
+
+const { class: className, style, delay = "0s" } = Astro.props;
+---
+
+<div 
+  class:list={[
+    "card-animate flex flex-col w-full hover:scale-[1.02] transition-all duration-500 hover:shadow-2xl group rounded-3xl border border-white/10 overflow-hidden relative",
+    className
+  ]}
+  style={`animation-delay: ${delay}; ${style || ''}`}
+>
+  <slot />
+</div>
+
+<style>
+  /* Ensure the card has a backdrop blur or specific background if needed, 
+     but allow the consumer to set bg via classes */
+</style>
