@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
 
 interface Props {
 	title: string;
@@ -38,9 +39,28 @@ const { title, description = "The Beach House LA - Professional Hybrid Recording
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+
+		<script type="application/ld+json" is:inline set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "The Beach House LA",
+			"image": new URL("/images/og-image.jpg", Astro.site),
+			"description": description,
+			"url": Astro.site,
+			"email": "jmaconny@ybfstudio.com",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Long Beach",
+				"addressRegion": "CA",
+				"addressCountry": "US"
+			},
+			"priceRange": "$$$"
+		})} />
+
 		<title>{title}</title>
 	</head>
 	<body class="bg-[#0A0A0A] text-[#F5F5F5]">
 		<slot />
+		<Footer />
 	</body>
 </html>

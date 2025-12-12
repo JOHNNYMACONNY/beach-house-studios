@@ -3,7 +3,11 @@
     "title": "The Beach House LA",
     "description": "A plug-and-play hybrid recording studio in Long Beach, CA.",
     "booking_url": "https://engineears.com/studio/thebeachhousela",
-    "contact_email": "jmaconny@ybfstudio.com"
+    "contact_email": "jmaconny@ybfstudio.com",
+    "socials": {
+      "instagram": "https://instagram.com/thebeachhousela",
+      "youtube": "https://youtube.com/@thebeachhousela"
+    }
   },
   "sections": {
     "hero": {
@@ -24,7 +28,12 @@
         "27 Million+ Streams",
         "180+ Songs for Epidemic Sound",
         "Credits: Netflix, Google, MrBeast, Aston Martin"
-      ]
+      ],
+      "socials": {
+        "instagram": "https://instagram.com/gregory_david_gtr",
+        "youtube": "https://youtube.com/@Gregorydavidmusic",
+        "spotify": "https://open.spotify.com/artist/0FqFjAdqK8jV8n9Xp8s7lA"
+      }
     },
     "services": [
       {
