@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import GearList from "../components/GearList.astro";
+import Footer from "../components/Footer.astro";
+import siteData from "../data/site-data.json";
+
+const { site_info } = siteData;
+---
+
+<Layout
+    title={`Gear - ${site_info.title}`}
+    description="Explore our analog and digital gear collection."
+>
+    <Navbar />
+    <main class="pt-20">
+        <GearList />
+    </main>
+    <Footer />
+</Layout>

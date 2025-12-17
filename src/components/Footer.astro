@@ -1,5 +1,5 @@
 ---
-import siteData from '../data/site-data.json';
+import siteData from "../data/site-data.json";
 
 const { site_info } = siteData;
 const currentYear = new Date().getFullYear();
@@ -10,8 +10,15 @@ const currentYear = new Date().getFullYear();
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <!-- Brand -->
             <div class="space-y-6">
-                <a href="/" class="block group">
-                    <h3 class="font-display text-2xl text-white group-hover:text-amber-500 transition-colors">
+                <a href="/" class="flex items-center gap-3 group">
+                    <img
+                        src="/branding/logo-mark.svg"
+                        alt="Logo"
+                        class="h-8 w-8 group-hover:opacity-80 transition"
+                    />
+                    <h3
+                        class="font-display text-2xl text-white group-hover:text-amber-500 transition-colors"
+                    >
                         {site_info.title}
                     </h3>
                 </a>
@@ -19,16 +26,75 @@ const currentYear = new Date().getFullYear();
                     {siteData.site_info.description}
                 </p>
                 <div class="flex gap-4">
-                    {site_info.socials.instagram && (
-                        <a href={site_info.socials.instagram} target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                        </a>
-                    )}
-                    {site_info.socials.youtube && (
-                        <a href={site_info.socials.youtube} target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="YouTube">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-                        </a>
-                    )}
+                    {
+                        site_info.socials.instagram && (
+                            <a
+                                href={site_info.socials.instagram}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-zinc-500 hover:text-amber-500 transition-colors"
+                                aria-label="Instagram"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <>
+                                        <rect
+                                            width="20"
+                                            height="20"
+                                            x="2"
+                                            y="2"
+                                            rx="5"
+                                            ry="5"
+                                        />
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                        <line
+                                            x1="17.5"
+                                            x2="17.51"
+                                            y1="6.5"
+                                            y2="6.5"
+                                        />
+                                    </>
+                                </svg>
+                            </a>
+                        )
+                    }
+                    {
+                        site_info.socials.youtube && (
+                            <a
+                                href={site_info.socials.youtube}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-zinc-500 hover:text-amber-500 transition-colors"
+                                aria-label="YouTube"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <>
+                                        <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                        <path d="m10 15 5-3-5-3z" />
+                                    </>
+                                </svg>
+                            </a>
+                        )
+                    }
                 </div>
             </div>
 
@@ -36,27 +102,56 @@ const currentYear = new Date().getFullYear();
             <div>
                 <h4 class="text-white font-medium mb-6">Studio</h4>
                 <ul class="space-y-4">
-                    <li><a href="#about" class="text-zinc-500 hover:text-white transition-colors">About</a></li>
-                    <li><a href="#gear" class="text-zinc-500 hover:text-white transition-colors">Gear List</a></li>
-                    <li><a href="#contact" class="text-zinc-500 hover:text-white transition-colors">Contact</a></li>
-                    <li><a href={site_info.booking_url} class="text-amber-500 hover:text-amber-400 transition-colors">Book Now</a></li>
+                    <li>
+                        <a
+                            href="/about"
+                            class="text-zinc-500 hover:text-white transition-colors"
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/gear"
+                            class="text-zinc-500 hover:text-white transition-colors"
+                            >Gear List</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="/contact"
+                            class="text-zinc-500 hover:text-white transition-colors"
+                            >Contact</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href={site_info.booking_url}
+                            class="text-amber-500 hover:text-amber-400 transition-colors"
+                            >Book Now</a
+                        >
+                    </li>
                 </ul>
             </div>
 
             <!-- Contact -->
             <div>
                 <h4 class="text-white font-medium mb-6">Contact</h4>
-                <a href={`mailto:${site_info.contact_email}`} class="text-zinc-500 hover:text-white transition-colors block mb-2">
+                <a
+                    href={`mailto:${site_info.contact_email}`}
+                    class="text-zinc-500 hover:text-white transition-colors block mb-2"
+                >
                     {site_info.contact_email}
                 </a>
                 <p class="text-zinc-600 text-sm mt-4">
-                    Long Beach, CA<br/>
+                    Long Beach, CA<br />
                     By Appointment Only
                 </p>
             </div>
         </div>
 
-        <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600">
+        <div
+            class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600"
+        >
             <p>&copy; {currentYear} {site_info.title}. All rights reserved.</p>
             <p>Designed with Mindful Aesthetics.</p>
         </div>

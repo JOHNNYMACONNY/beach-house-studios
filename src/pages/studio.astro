@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Amenities from "../components/Amenities.astro";
+import Footer from "../components/Footer.astro";
+import siteData from "../data/site-data.json";
+
+const { site_info } = siteData;
+---
+
+<Layout
+    title={`The Studio - ${site_info.title}`}
+    description="Acoustically treated mix room, kitchen, and lounge access."
+>
+    <Navbar />
+    <main class="pt-20">
+        <Amenities />
+        {/* Placeholder for future Studio Pics gallery */}
+        <section class="py-24 px-6 bg-[#0A0A0A] border-t border-white/5">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="font-display text-3xl text-white mb-4">
+                    Gallery Coming Soon
+                </h2>
+                <p class="text-white/60">
+                    More photos of the space are on the way.
+                </p>
+            </div>
+        </section>
+    </main>
+    <Footer />
+</Layout>

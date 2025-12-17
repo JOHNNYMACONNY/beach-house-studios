@@ -1,14 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import ValueProp from '../components/ValueProp.astro';
-import AboutProducer from '../components/AboutProducer.astro';
-import ServicesGrid from '../components/ServicesGrid.astro';
-import GearList from '../components/GearList.astro';
-import Amenities from '../components/Amenities.astro';
-import ContactForm from '../components/ContactForm.astro';
-import siteData from '../data/site-data.json';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import ValueProp from "../components/ValueProp.astro";
+import Footer from "../components/Footer.astro";
+import siteData from "../data/site-data.json";
 
 const { site_info } = siteData;
 ---
@@ -18,11 +14,7 @@ const { site_info } = siteData;
 	<main>
 		<Hero />
 		<ValueProp />
-		<AboutProducer />
-		<ServicesGrid />
-		<GearList />
-		<Amenities />
-		<ContactForm />
+		<!-- Quick Links / Teasers could go here, but keeping it simple as per request -->
 	</main>
-
+	<Footer />
 </Layout>

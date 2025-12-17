@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import AboutProducer from "../components/AboutProducer.astro";
+import Footer from "../components/Footer.astro";
+import siteData from "../data/site-data.json";
+
+const { site_info } = siteData;
+---
+
+<Layout
+    title={`About - ${site_info.title}`}
+    description="Meet the producer behind The Beach House LA."
+>
+    <Navbar />
+    <main class="pt-20">
+        <AboutProducer />
+    </main>
+    <Footer />
+</Layout>

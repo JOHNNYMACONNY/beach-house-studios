@@ -1,13 +1,15 @@
 ---
-import '../styles/global.css';
-import Footer from '../components/Footer.astro';
+import "../styles/global.css";
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = "The Beach House LA - Professional Hybrid Recording Studio" } = Astro.props;
+const {
+	title,
+	description = "The Beach House LA - Professional Hybrid Recording Studio",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,7 +18,8 @@ const { title, description = "The Beach House LA - Professional Hybrid Recording
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/branding/logo.svg" /> <!-- Fallback or actual path -->
+		<link rel="icon" type="image/svg+xml" href="/branding/logo.svg" />
+		<!-- Fallback or actual path -->
 		<meta name="generator" content={Astro.generator} />
 		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 
@@ -25,42 +28,53 @@ const { title, description = "The Beach House LA - Professional Hybrid Recording
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={new URL("/images/og-image.jpg", Astro.url)} />
+		<meta
+			property="og:image"
+			content={new URL("/images/og-image.jpg", Astro.url)}
+		/>
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={Astro.url} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={new URL("/images/og-image.jpg", Astro.url)} />
+		<meta
+			property="twitter:image"
+			content={new URL("/images/og-image.jpg", Astro.url)}
+		/>
 
 		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 
-
-		<script type="application/ld+json" is:inline set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "LocalBusiness",
-			"name": "The Beach House LA",
-			"image": new URL("/images/og-image.jpg", Astro.site),
-			"description": description,
-			"url": Astro.site,
-			"email": "jmaconny@ybfstudio.com",
-			"address": {
-				"@type": "PostalAddress",
-				"addressLocality": "Long Beach",
-				"addressRegion": "CA",
-				"addressCountry": "US"
-			},
-			"priceRange": "$$$"
-		})} />
+		<script
+			type="application/ld+json"
+			is:inline
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				name: "The Beach House LA",
+				image: new URL("/images/og-image.jpg", Astro.site),
+				description: description,
+				url: Astro.site,
+				email: "jmaconny@ybfstudio.com",
+				address: {
+					"@type": "PostalAddress",
+					addressLocality: "Long Beach",
+					addressRegion: "CA",
+					addressCountry: "US",
+				},
+				priceRange: "$$$",
+			})}
+		/>
 
 		<title>{title}</title>
 	</head>
 	<body class="bg-[#0A0A0A] text-[#F5F5F5]">
 		<slot />
-		<Footer />
 	</body>
 </html>
