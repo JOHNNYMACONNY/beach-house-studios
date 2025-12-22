@@ -1,0 +1,1026 @@
+---
+
+---
+
+<div
+    data-mentorship-form
+    class="min-h-screen bg-gradient-to-br from-amber-50 via-orange-100 to-rose-200 p-4 md:p-8 relative overflow-hidden font-sans"
+>
+    <!-- Warm steam effect overlays -->
+    <div
+        class="absolute inset-0 bg-gradient-to-t from-amber-200/30 via-transparent to-orange-100/20 pointer-events-none"
+    >
+    </div>
+    <div
+        class="absolute top-0 left-0 w-full h-full opacity-40 pointer-events-none"
+        style="background-image: radial-gradient(circle at 20% 30%, rgba(251, 191, 36, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(249, 115, 22, 0.15) 0%, transparent 50%)"
+    >
+    </div>
+
+    <div class="max-w-3xl mx-auto relative z-10" data-container>
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1
+                class="text-5xl font-bold mb-3 text-amber-900"
+                style="font-family: 'Cinzel', serif; letter-spacing: 0.08em; font-weight: 700;"
+            >
+                ARTIST MENTORSHIP
+            </h1>
+            <p
+                class="text-xs text-amber-800 font-normal tracking-widest uppercase mt-4"
+                style="font-family: 'Libre Baskerville', serif; letter-spacing: 0.35em;"
+            >
+                You've heard me, you just don't know it
+            </p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div data-progress-container class="mb-8">
+            <div class="flex justify-between items-center mb-2">
+                <span
+                    class="text-sm text-amber-800 font-medium"
+                    data-step-indicator>Step 1 of 5</span
+                >
+                <span
+                    class="text-sm text-amber-800 font-medium"
+                    data-percent-indicator>20% Complete</span
+                >
+            </div>
+            <div class="w-full bg-amber-300/50 rounded-full h-3 shadow-inner">
+                <div
+                    data-progress-bar-fill
+                    class="bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 h-3 rounded-full transition-all duration-500 shadow-lg"
+                    style="width: 20%"
+                >
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="bg-gradient-to-br from-white/90 via-amber-50/80 to-orange-50/70 backdrop-blur-xl rounded-3xl p-8 md:p-10 shadow-2xl border-2 border-amber-200/50 relative"
+        >
+            <!-- Live Region for Errors -->
+            <div class="sr-only" aria-live="polite" data-live-region></div>
+
+            <!-- General Form Error Message -->
+            <div
+                data-form-error
+                class="hidden mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm flex items-center"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 mr-2 flex-shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><circle cx="12" cy="12" r="10"></circle><line
+                        x1="12"
+                        y1="8"
+                        x2="12"
+                        y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"
+                    ></line></svg
+                >
+                <span data-form-error-text></span>
+            </div>
+
+            <form data-form novalidate>
+                <!-- Honeypot Field (Hidden) -->
+                <div style="display:none" aria-hidden="true">
+                    <label for="confirm_email"
+                        >Please leave this field blank</label
+                    >
+                    <input
+                        type="text"
+                        id="confirm_email"
+                        name="confirm_email"
+                        tabindex="-1"
+                        autocomplete="off"
+                    />
+                </div>
+
+                <!-- Step 1: Basic Info -->
+                <div data-step="1" class="form-step">
+                    <div class="space-y-6">
+                        <div class="flex items-center mb-6">
+                            <!-- Users Icon -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-7 h-7 text-amber-700 mr-3"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path
+                                    d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                                ></path><circle cx="9" cy="7" r="4"
+                                ></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"
+                                ></path><path d="M16 3.13a4 4 0 0 1 0 7.75"
+                                ></path></svg
+                            >
+                            <h2
+                                class="text-3xl font-bold text-amber-900"
+                                style="font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700;"
+                            >
+                                Let's start with the basics
+                            </h2>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-name"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >Your Name *</label
+                            >
+                            <input
+                                id="field-name"
+                                type="text"
+                                name="name"
+                                required
+                                autocomplete="name"
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 placeholder-amber-400 transition-all"
+                                placeholder="John Smith"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-artistName"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >Artist/Stage Name *</label
+                            >
+                            <input
+                                id="field-artistName"
+                                type="text"
+                                name="artistName"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 placeholder-amber-400 transition-all"
+                                placeholder="Your artist name"
+                            />
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label
+                                    for="field-email"
+                                    class="block text-sm font-semibold mb-2 text-amber-900"
+                                    >Email *</label
+                                >
+                                <input
+                                    id="field-email"
+                                    type="email"
+                                    name="email"
+                                    required
+                                    autocomplete="email"
+                                    class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 placeholder-amber-400 transition-all"
+                                    placeholder="you@email.com"
+                                />
+                            </div>
+                            <div>
+                                <label
+                                    for="field-phone"
+                                    class="block text-sm font-semibold mb-2 text-amber-900"
+                                    >Phone</label
+                                >
+                                <input
+                                    id="field-phone"
+                                    type="tel"
+                                    name="phone"
+                                    autocomplete="tel"
+                                    class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 placeholder-amber-400 transition-all"
+                                    placeholder="(555) 123-4567"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-location"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >Location (City, State/Country)</label
+                            >
+                            <input
+                                id="field-location"
+                                type="text"
+                                name="location"
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 placeholder-amber-400 transition-all"
+                                placeholder="Los Angeles, CA"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-genre"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >Primary Genre(s) *</label
+                            >
+                            <input
+                                id="field-genre"
+                                type="text"
+                                name="genre"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 placeholder-amber-400 transition-all"
+                                placeholder="Pop, Hip-Hop, Electronic, etc."
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Career Stage -->
+                <div data-step="2" class="form-step hidden">
+                    <div class="space-y-6">
+                        <div class="flex items-center mb-6">
+                            <!-- Target Icon -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-7 h-7 text-amber-700 mr-3"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><circle cx="12" cy="12" r="10"></circle><circle
+                                    cx="12"
+                                    cy="12"
+                                    r="6"></circle><circle cx="12" cy="12" r="2"
+                                ></circle></svg
+                            >
+                            <h2
+                                class="text-3xl font-bold text-amber-900"
+                                style="font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700;"
+                            >
+                                Where are you in your career?
+                            </h2>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-careerStage"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >Career Stage *</label
+                            >
+                            <select
+                                id="field-careerStage"
+                                name="careerStage"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 transition-all"
+                            >
+                                <option value="">Select one...</option>
+                                <option value="emerging"
+                                    >Emerging (just starting, building
+                                    foundation)</option
+                                >
+                                <option value="developing"
+                                    >Developing (released music, growing
+                                    fanbase)</option
+                                >
+                                <option value="midlevel"
+                                    >Mid-Level (established presence, seeking
+                                    next level)</option
+                                >
+                                <option value="established"
+                                    >Established (consistent releases, industry
+                                    connections)</option
+                                >
+                            </select>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-currentChallenges"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >What are your biggest challenges right now? *</label
+                            >
+                            <textarea
+                                id="field-currentChallenges"
+                                name="currentChallenges"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none h-32 text-amber-900 placeholder-amber-400 transition-all"
+                                placeholder="e.g., Improving song structure, understanding what makes music work commercially, refining production quality..."
+                            ></textarea>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-goals"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >What are your goals for the next 6-12 months? *</label
+                            >
+                            <textarea
+                                id="field-goals"
+                                name="goals"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none h-32 text-amber-900 placeholder-amber-400 transition-all"
+                                placeholder="e.g., Release an EP that resonates, develop a signature sound, understand what makes music commercially viable..."
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Portfolio & Experience -->
+                <div data-step="3" class="form-step hidden">
+                    <div class="space-y-6">
+                        <div class="flex items-center mb-6">
+                            <!-- Music Icon -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-7 h-7 text-amber-700 mr-3"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><path d="M9 18V5l12-2v13"></path><circle
+                                    cx="6"
+                                    cy="18"
+                                    r="3"></circle><circle cx="18" cy="16" r="3"
+                                ></circle></svg
+                            >
+                            <h2
+                                class="text-3xl font-bold text-amber-900"
+                                style="font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700;"
+                            >
+                                Show me your work
+                            </h2>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-portfolio"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >Portfolio/Music Links *</label
+                            >
+                            <textarea
+                                id="field-portfolio"
+                                name="portfolio"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none h-32 text-amber-900 placeholder-amber-400 transition-all"
+                                placeholder="Paste links to your Spotify, SoundCloud, YouTube, website, or any releases you want me to hear"
+                            ></textarea>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-whyNow"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >Why is now the right time for mentorship? *</label
+                            >
+                            <textarea
+                                id="field-whyNow"
+                                name="whyNow"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none h-32 text-amber-900 placeholder-amber-400 transition-all"
+                                placeholder="What's pushing you to invest in guidance right now?"
+                            ></textarea>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-hearAbout"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >How did you hear about this program?</label
+                            >
+                            <input
+                                id="field-hearAbout"
+                                type="text"
+                                name="hearAbout"
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 placeholder-amber-400 transition-all"
+                                placeholder="Referral, social media, website, etc."
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Investment & Commitment -->
+                <div data-step="4" class="form-step hidden">
+                    <div class="space-y-6">
+                        <div class="flex items-center mb-6">
+                            <!-- DollarSign Icon -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-7 h-7 text-amber-700 mr-3"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><line x1="12" y1="1" x2="12" y2="23"
+                                ></line><path
+                                    d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                                ></path></svg
+                            >
+                            <h2
+                                class="text-3xl font-bold text-amber-900"
+                                style="font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700;"
+                            >
+                                Investment & commitment
+                            </h2>
+                        </div>
+
+                        <div
+                            class="bg-gradient-to-br from-amber-100/80 to-orange-100/60 border-2 border-amber-300/70 rounded-2xl p-6 mb-6 shadow-lg"
+                        >
+                            <h3
+                                class="font-bold text-xl mb-4 text-amber-900"
+                                style="font-family: 'Cinzel', serif; font-weight: 700;"
+                            >
+                                Program Options:
+                            </h3>
+                            <div class="space-y-4 text-sm">
+                                <div
+                                    class="bg-white/50 rounded-xl p-4 border border-amber-200"
+                                >
+                                    <p
+                                        class="font-bold text-lg text-amber-800"
+                                        style="font-family: 'Cinzel', serif; font-weight: 700;"
+                                    >
+                                        Standard Tier: $1,200/month
+                                    </p>
+                                    <p class="text-amber-700 mt-1">
+                                        2 feedback sessions + async listening on
+                                        2-3 tracks monthly
+                                    </p>
+                                </div>
+                                <div
+                                    class="bg-white/50 rounded-xl p-4 border border-amber-200"
+                                >
+                                    <p
+                                        class="font-bold text-lg text-amber-800"
+                                        style="font-family: 'Cinzel', serif; font-weight: 700;"
+                                    >
+                                        Premium Tier: $1,800/month
+                                    </p>
+                                    <p class="text-amber-700 mt-1">
+                                        4 sessions + priority feedback + deeper
+                                        access
+                                    </p>
+                                </div>
+                                <div
+                                    class="bg-white/50 rounded-xl p-4 border border-amber-200"
+                                >
+                                    <p
+                                        class="font-bold text-lg text-amber-800"
+                                        style="font-family: 'Cinzel', serif; font-weight: 700;"
+                                    >
+                                        One-Off Consultation: $400-500
+                                    </p>
+                                    <p class="text-amber-700 mt-1">
+                                        Single 60-90 minute session to test the
+                                        waters
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-budget"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >Which option interests you most? *</label
+                            >
+                            <select
+                                id="field-budget"
+                                name="budget"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 transition-all"
+                            >
+                                <option value="">Select one...</option>
+                                <option value="consultation"
+                                    >One-Off Consultation ($400-500)</option
+                                >
+                                <option value="standard"
+                                    >Standard Monthly ($1,200/mo)</option
+                                >
+                                <option value="premium"
+                                    >Premium Monthly ($1,800/mo)</option
+                                >
+                                <option value="discuss"
+                                    >Open to discussing what fits</option
+                                >
+                            </select>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-timeline"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >When are you looking to start? *</label
+                            >
+                            <select
+                                id="field-timeline"
+                                name="timeline"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 transition-all"
+                            >
+                                <option value="">Select one...</option>
+                                <option value="immediately">Immediately</option>
+                                <option value="1-2weeks"
+                                    >Within 1-2 weeks</option
+                                >
+                                <option value="1month">Within a month</option>
+                                <option value="exploring"
+                                    >Just exploring for now</option
+                                >
+                            </select>
+                        </div>
+
+                        <div>
+                            <label
+                                for="field-commitment"
+                                class="block text-sm font-semibold mb-2 text-amber-900"
+                                >This program requires active participation and
+                                implementing feedback. Are you ready to do the
+                                work? *</label
+                            >
+                            <select
+                                id="field-commitment"
+                                name="commitment"
+                                required
+                                class="w-full bg-white/70 border-2 border-amber-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-400 focus:border-amber-400 focus:outline-none text-amber-900 transition-all"
+                            >
+                                <option value="">Select one...</option>
+                                <option value="yes"
+                                    >Yes, I'm ready to put in the work</option
+                                >
+                                <option value="mostly"
+                                    >Yes, but I have time constraints</option
+                                >
+                                <option value="unsure"
+                                    >I'm not sure what to expect</option
+                                >
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Review -->
+                <div data-step="5" class="form-step hidden">
+                    <div class="space-y-6">
+                        <div class="flex items-center mb-6">
+                            <!-- Calendar Icon -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-7 h-7 text-amber-700 mr-3"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                ><rect
+                                    x="3"
+                                    y="4"
+                                    width="18"
+                                    height="18"
+                                    rx="2"
+                                    ry="2"></rect><line
+                                    x1="16"
+                                    y1="2"
+                                    x2="16"
+                                    y2="6"></line><line
+                                    x1="8"
+                                    y1="2"
+                                    x2="8"
+                                    y2="6"></line><line
+                                    x1="3"
+                                    y1="10"
+                                    x2="21"
+                                    y2="10"></line></svg
+                            >
+                            <h2
+                                class="text-3xl font-bold text-amber-900"
+                                style="font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700;"
+                            >
+                                Review & submit
+                            </h2>
+                        </div>
+
+                        <div
+                            class="bg-gradient-to-br from-amber-50/80 to-orange-50/60 rounded-2xl p-6 space-y-4 border-2 border-amber-200/50 shadow-inner"
+                        >
+                            <div>
+                                <p class="text-sm text-amber-600 font-medium">
+                                    Artist Name
+                                </p>
+                                <p
+                                    class="font-bold text-amber-900 text-lg"
+                                    data-review="artistName"
+                                >
+                                    Not provided
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-amber-600 font-medium">
+                                    Email
+                                </p>
+                                <p
+                                    class="font-bold text-amber-900"
+                                    data-review="email"
+                                >
+                                    Not provided
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-amber-600 font-medium">
+                                    Career Stage
+                                </p>
+                                <p
+                                    class="font-bold text-amber-900 capitalize"
+                                    data-review="careerStage"
+                                >
+                                    Not provided
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-amber-600 font-medium">
+                                    Program Interest
+                                </p>
+                                <p
+                                    class="font-bold text-amber-900 capitalize"
+                                    data-review="budget"
+                                >
+                                    Not provided
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-amber-600 font-medium">
+                                    Timeline
+                                </p>
+                                <p
+                                    class="font-bold text-amber-900 capitalize"
+                                    data-review="timeline"
+                                >
+                                    Not provided
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-gradient-to-br from-amber-100/60 to-orange-100/50 border-2 border-amber-300/50 rounded-2xl p-6 shadow-inner"
+                        >
+                            <p class="text-sm text-amber-800 leading-relaxed">
+                                By submitting this application, you acknowledge
+                                that mentorship slots are limited and acceptance
+                                is selective based on fit and commitment level.
+                                You'll hear back within 3-5 business days.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Success (Initially Hidden) -->
+                <div data-step="6" class="form-step hidden text-center py-12">
+                    <!-- CheckCircle Icon -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-24 h-24 text-amber-600 mx-auto mb-6 drop-shadow-lg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+                        ></path><polyline points="22 4 12 14.01 9 11.01"
+                        ></polyline></svg
+                    >
+                    <h2
+                        class="text-4xl font-bold mb-4 text-amber-900"
+                        style="font-family: 'Cinzel', serif; letter-spacing: 0.05em; font-weight: 700;"
+                    >
+                        Application Submitted!
+                    </h2>
+                    <p
+                        class="text-amber-800 text-sm mb-6 max-w-md mx-auto font-normal"
+                        style="font-family: 'Libre Baskerville', serif;"
+                    >
+                        Thanks for your interest, <span
+                            data-success="artistName">Artist</span
+                        >. I'll review your application and get back to you
+                        within 3-5 business days.
+                    </p>
+                    <div
+                        class="bg-gradient-to-br from-amber-50/80 to-orange-50/60 rounded-2xl p-6 max-w-md mx-auto border-2 border-amber-200/50 shadow-lg"
+                    >
+                        <p class="text-sm text-amber-600 mb-2 font-medium">
+                            Application sent to:
+                        </p>
+                        <p
+                            class="font-bold text-amber-900 text-lg"
+                            data-success="email"
+                        >
+                        </p>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Navigation Buttons -->
+            <div
+                data-nav-buttons
+                class="flex justify-between mt-8 pt-6 border-t-2 border-amber-200/50"
+            >
+                <button
+                    type="button"
+                    data-back-btn
+                    class="hidden px-8 py-3 bg-amber-200/70 text-amber-900 font-semibold rounded-xl hover:bg-amber-300/70 transition-all shadow-md hover:shadow-lg"
+                >
+                    Back
+                </button>
+
+                <button
+                    type="button"
+                    data-next-btn
+                    class="ml-auto px-8 py-3 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white rounded-xl hover:from-amber-600 hover:via-orange-600 hover:to-rose-600 transition-all font-bold shadow-lg hover:shadow-xl"
+                >
+                    Continue
+                </button>
+
+                <button
+                    type="button"
+                    data-submit-btn
+                    class="hidden ml-auto px-10 py-3 bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600 text-white rounded-xl hover:from-amber-700 hover:via-orange-700 hover:to-rose-700 transition-all font-bold shadow-lg hover:shadow-xl text-lg disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                    Submit Application
+                </button>
+            </div>
+        </div>
+
+        <p
+            data-footer-contact
+            class="text-center text-amber-700 text-sm mt-6 font-medium"
+        >
+            Questions? Email: Gregorydavidmusic@gmail.com
+        </p>
+    </div>
+</div>
+
+<script>
+    class MentorshipForm {
+        constructor(root) {
+            this.root = root;
+            this.currentStep = 1;
+            this.totalSteps = 5;
+            this.formData = {};
+
+            // Elements
+            this.form = root.querySelector("[data-form]");
+            this.progressContainer = root.querySelector(
+                "[data-progress-container]",
+            );
+            this.stepIndicator = root.querySelector("[data-step-indicator]");
+            this.percentIndicator = root.querySelector(
+                "[data-percent-indicator]",
+            );
+            this.progressBarFill = root.querySelector(
+                "[data-progress-bar-fill]",
+            );
+            this.navButtons = root.querySelector("[data-nav-buttons]");
+            this.backBtn = root.querySelector("[data-back-btn]");
+            this.nextBtn = root.querySelector("[data-next-btn]");
+            this.submitBtn = root.querySelector("[data-submit-btn]");
+            this.footerContact = root.querySelector("[data-footer-contact]");
+            this.errorContainer = root.querySelector("[data-form-error]");
+            this.errorText = root.querySelector("[data-form-error-text]");
+            this.liveRegion = root.querySelector("[data-live-region]");
+
+            if (!this.form) return;
+
+            this.init();
+        }
+
+        init() {
+            // Bind Events
+            this.nextBtn.addEventListener("click", () => this.handleNext());
+            this.backBtn.addEventListener("click", () => this.handleBack());
+            this.submitBtn.addEventListener("click", () => this.handleSubmit());
+
+            // Initial State
+            this.updateUI();
+        }
+
+        handleNext() {
+            if (this.validateStep(this.currentStep)) {
+                this.captureData(this.currentStep);
+                this.currentStep++;
+                this.updateUI();
+                this.hideError(); // Clear global errors on nav
+                this.announceToScreenReader(`Step ${this.currentStep} loaded`);
+            }
+        }
+
+        handleBack() {
+            if (this.currentStep > 1) {
+                this.currentStep--;
+                this.updateUI();
+                this.hideError(); // Clear global errors on nav
+                this.announceToScreenReader(`Step ${this.currentStep} loaded`);
+            }
+        }
+
+        async handleSubmit() {
+            // Capture final step data
+            if (!this.validateStep(this.currentStep)) return;
+
+            // Disable button
+            this.setSubmitting(true);
+            this.hideError();
+
+            try {
+                const payload = new FormData(this.form);
+
+                const response = await fetch("/api/mentorship-intake", {
+                    method: "POST",
+                    body: payload,
+                });
+
+                let result;
+                try {
+                    result = await response.json();
+                } catch (e) {
+                    throw new Error("Server response was not valid JSON");
+                }
+
+                if (response.ok && result.ok) {
+                    this.handleSuccess(payload);
+                } else {
+                    throw new Error(result.error || "Submission failed");
+                }
+            } catch (error) {
+                console.error("Form Error:", error);
+                this.showError(
+                    error.message ||
+                        "An unexpected error occurred. Please try again.",
+                );
+            } finally {
+                this.setSubmitting(false);
+            }
+        }
+
+        handleSuccess(formData) {
+            // Populate Success Screen
+            const artistName = formData.get("artistName") || "Artist";
+            const email = formData.get("email") || "";
+
+            this.root.querySelector("[data-success='artistName']").textContent =
+                artistName;
+            this.root.querySelector("[data-success='email']").textContent =
+                email;
+
+            // Show Step 6
+            this.currentStep = 6;
+            this.updateUI();
+            this.announceToScreenReader("Application Submitted Successfully");
+        }
+
+        setSubmitting(isSubmitting) {
+            this.submitBtn.disabled = isSubmitting;
+            this.submitBtn.textContent = isSubmitting
+                ? "Submitting..."
+                : "Submit Application";
+        }
+
+        showError(message) {
+            this.errorText.textContent = message;
+            this.errorContainer.classList.remove("hidden");
+            this.announceToScreenReader("Error: " + message);
+        }
+
+        hideError() {
+            this.errorContainer.classList.add("hidden");
+        }
+
+        captureData(step) {
+            const stepEl = this.root.querySelector(`[data-step="${step}"]`);
+            if (!stepEl) return;
+
+            const inputs = stepEl.querySelectorAll("input, select, textarea");
+            inputs.forEach((input) => {
+                if (input.name) {
+                    this.formData[input.name] = input.value;
+                }
+            });
+        }
+
+        validateStep(step) {
+            const stepEl = this.root.querySelector(`[data-step="${step}"]`);
+            if (!stepEl) return true;
+
+            const inputs = stepEl.querySelectorAll(
+                "input[required], select[required], textarea[required]",
+            );
+            let isValid = true;
+            let firstInvalid = null;
+
+            inputs.forEach((input) => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add(
+                        "border-red-500",
+                        "ring-2",
+                        "ring-red-200",
+                    );
+                    if (!firstInvalid) firstInvalid = input;
+
+                    // Remove error on input (persistent listener)
+                    input.addEventListener("input", () => {
+                        input.classList.remove(
+                            "border-red-500",
+                            "ring-2",
+                            "ring-red-200",
+                        );
+                    });
+                }
+            });
+
+            if (!isValid && firstInvalid) {
+                firstInvalid.focus();
+                this.announceToScreenReader("Please fill out required fields.");
+            }
+
+            return isValid;
+        }
+
+        updateUI() {
+            // Hide all steps
+            this.root.querySelectorAll(".form-step").forEach((step) => {
+                step.classList.add("hidden");
+            });
+
+            // Special Case: Success Step (6)
+            if (this.currentStep === 6) {
+                this.root
+                    .querySelector(`[data-step="6"]`)
+                    .classList.remove("hidden");
+                this.progressContainer.classList.add("hidden");
+                this.navButtons.classList.add("hidden");
+                this.footerContact.classList.add("hidden");
+                return;
+            }
+
+            // Show current step
+            const currentStepEl = this.root.querySelector(
+                `[data-step="${this.currentStep}"]`,
+            );
+            if (currentStepEl) currentStepEl.classList.remove("hidden");
+
+            // Update Progress
+            const percent = Math.round(
+                (this.currentStep / this.totalSteps) * 100,
+            );
+            this.stepIndicator.textContent = `Step ${this.currentStep} of ${this.totalSteps}`;
+            this.percentIndicator.textContent = `${percent}% Complete`;
+            this.progressBarFill.style.width = `${percent}%`;
+
+            // Update Buttons
+            if (this.currentStep === 1) {
+                this.backBtn.classList.add("hidden");
+            } else {
+                this.backBtn.classList.remove("hidden");
+            }
+
+            if (this.currentStep === this.totalSteps) {
+                this.nextBtn.classList.add("hidden");
+                this.submitBtn.classList.remove("hidden");
+                this.populateReview();
+            } else {
+                this.nextBtn.classList.remove("hidden");
+                this.submitBtn.classList.add("hidden");
+            }
+        }
+
+        populateReview() {
+            // Use live FormData to ensure review data is never stale
+            const currentScroll = new FormData(this.form);
+            const fields = [
+                "artistName",
+                "email",
+                "careerStage",
+                "budget",
+                "timeline",
+            ];
+
+            fields.forEach((field) => {
+                const el = this.root.querySelector(`[data-review="${field}"]`);
+                if (el) {
+                    el.textContent = currentScroll.get(field) || "Not provided";
+                }
+            });
+        }
+
+        announceToScreenReader(message) {
+            this.liveRegion.textContent = message;
+        }
+    }
+
+    // Initialize all instances
+    document.querySelectorAll("[data-mentorship-form]").forEach((root) => {
+        new MentorshipForm(root);
+    });
+</script>
