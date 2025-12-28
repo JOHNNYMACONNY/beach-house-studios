@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import MentorshipIntake from "../components/MentorshipIntake.astro";
+
+const title = "Artist Mentorship | Beach House Studios";
+const description =
+    "Apply for exclusive artist mentorship and development with Beach House Studios.";
+---
+
+<Layout title={title} description={description}>
+    <Navbar />
+    <main>
+        <MentorshipIntake />
+    </main>
+    <Footer />
+</Layout>
