@@ -1,77 +1,216 @@
 ---
-import siteData from '../data/site-data.json';
-import MindfulCard from './MindfulCard.astro';
+import siteData from "../data/site-data.json";
+import MindfulCard from "./MindfulCard.astro";
 const { about_producer } = siteData.sections;
 ---
+
 <section id="about" class="py-24 px-6 bg-[#0A0A0A]">
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Image Card -->
-            <MindfulCard class="aspect-[4/5] lg:aspect-auto lg:h-[600px] p-0 border-indigo-500/20 bg-indigo-900/10 overflow-hidden relative group">
-                <img 
-                    src="/images/gregory-headshot.jpg" 
-                    alt={about_producer.name} 
+            <MindfulCard
+                class="aspect-[4/5] lg:aspect-auto lg:h-[600px] p-0 border-indigo-500/20 bg-indigo-900/10 overflow-hidden relative group"
+            >
+                <img
+                    src="/images/gregory-headshot.jpg"
+                    alt={about_producer.name}
                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     onerror="this.src='https://images.unsplash.com/photo-1516280440614-6697288d5d38?q=80&w=2070&auto=format&fit=crop'"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+                >
+                </div>
+
                 <div class="absolute bottom-0 left-0 p-10 w-full">
                     <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs uppercase tracking-widest text-indigo-200/80 font-medium bg-indigo-950/80 backdrop-blur px-3 py-1.5 rounded-full border border-indigo-500/20">Producer</span>
-                        <div class="text-xs bg-amber-500 text-black px-3 py-1.5 rounded-full font-semibold">Open for Booking</div>
+                        <span
+                            class="text-xs uppercase tracking-widest text-indigo-200/80 font-medium bg-indigo-950/80 backdrop-blur px-3 py-1.5 rounded-full border border-indigo-500/20"
+                            >Producer</span
+                        >
+                        <div
+                            class="text-xs bg-amber-500 text-black px-3 py-1.5 rounded-full font-semibold"
+                        >
+                            Open for Booking
+                        </div>
                     </div>
-                    <h3 class="font-display text-4xl md:text-5xl text-white mb-2">{about_producer.name}</h3>
-                    <p class="text-indigo-100/70 font-light">{about_producer.role}</p>
+                    <h3
+                        class="font-display text-4xl md:text-5xl text-white mb-2"
+                    >
+                        {about_producer.name}
+                    </h3>
+                    <p class="text-indigo-100/70 font-light">
+                        {about_producer.role}
+                    </p>
                 </div>
             </MindfulCard>
 
             <!-- Bio & Stats Card -->
-            <MindfulCard delay="0.2s" class="p-10 md:p-14 bg-indigo-900/5 border-indigo-500/10 justify-center">
+            <MindfulCard
+                delay="0.2s"
+                class="p-10 md:p-14 bg-indigo-900/5 border-indigo-500/10 justify-center"
+            >
                 <div class="space-y-10">
                     <div class="space-y-6">
-                        <h2 class="font-display text-4xl text-white leading-tight">
-                            "Specializing in organic, guitar-forward production."
+                        <h2
+                            class="font-display text-4xl text-white leading-tight"
+                        >
+                            {about_producer.tagline}
                         </h2>
-                        <p class="text-xl text-zinc-400 font-light leading-relaxed">
+                        <p
+                            class="text-xl text-zinc-400 font-light leading-relaxed"
+                        >
                             {about_producer.bio}
                         </p>
                     </div>
 
                     <div class="space-y-4 pt-10 border-t border-white/5">
-                        <p class="text-sm font-mono text-zinc-500 uppercase tracking-widest">Career Highlights</p>
+                        <p
+                            class="text-sm font-mono text-zinc-500 uppercase tracking-widest"
+                        >
+                            Career Highlights
+                        </p>
                         <ul class="space-y-4">
-                            {about_producer.stats.map(stat => (
-                                <li class="flex items-center gap-4 text-lg text-zinc-300">
-                                    <div class="w-1.5 h-1.5 rounded-full bg-indigo-500"></div>
-                                    {stat}
-                                </li>
-                            ))}
+                            {
+                                about_producer.stats.map((stat) => (
+                                    <li class="flex items-center gap-4 text-lg text-zinc-300">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                                        {stat}
+                                    </li>
+                                ))
+                            }
                         </ul>
-                        
+
                         {/* Producer Socials */}
                         <div class="flex gap-4 pt-6">
-                            {about_producer.socials?.instagram && (
-                                <a href={about_producer.socials.instagram} target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="Instagram">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                                </a>
-                            )}
-                            {about_producer.socials?.youtube && (
-                                <a href={about_producer.socials.youtube} target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="YouTube">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-                                </a>
-                            )}
-                            {about_producer.socials?.spotify && (
-                                <a href={about_producer.socials.spotify} target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-amber-500 transition-colors" aria-label="Spotify">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 11.5c4-1.5 8-1.5 8 0"/><path d="M8.5 14c3-1 6-1 7.5 0"/><path d="M9 16.5c2-.5 4.5-.5 6 0"/></svg>
-                                </a>
-                            )}
+                            {
+                                about_producer.socials?.instagram && (
+                                    <a
+                                        href={about_producer.socials.instagram}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-zinc-500 hover:text-amber-500 transition-colors"
+                                        aria-label="Instagram"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <>
+                                                <rect
+                                                    width="20"
+                                                    height="20"
+                                                    x="2"
+                                                    y="2"
+                                                    rx="5"
+                                                    ry="5"
+                                                />
+                                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                                <line
+                                                    x1="17.5"
+                                                    x2="17.51"
+                                                    y1="6.5"
+                                                    y2="6.5"
+                                                />
+                                            </>
+                                        </svg>
+                                    </a>
+                                )
+                            }
+                            {
+                                about_producer.socials?.youtube && (
+                                    <a
+                                        href={about_producer.socials.youtube}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-zinc-500 hover:text-amber-500 transition-colors"
+                                        aria-label="YouTube"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <>
+                                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                                <path d="m10 15 5-3-5-3z" />
+                                            </>
+                                        </svg>
+                                    </a>
+                                )
+                            }
+                            {
+                                about_producer.socials?.spotify && (
+                                    <a
+                                        href={about_producer.socials.spotify}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-zinc-500 hover:text-amber-500 transition-colors"
+                                        aria-label="Spotify"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <>
+                                                <circle
+                                                    cx="12"
+                                                    cy="12"
+                                                    r="10"
+                                                />
+                                                <path d="M8 11.5c4-1.5 8-1.5 8 0" />
+                                                <path d="M8.5 14c3-1 6-1 7.5 0" />
+                                                <path d="M9 16.5c2-.5 4.5-.5 6 0" />
+                                            </>
+                                        </svg>
+                                    </a>
+                                )
+                            }
                         </div>
                     </div>
 
-                    <a href="#contact" class="inline-flex items-center gap-2 text-white hover:text-amber-500 transition-colors group/link">
-                        <span class="border-b border-white/20 pb-1 group-hover/link:border-amber-500">Work with Gregory</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    <a
+                        href="#contact"
+                        class="inline-flex items-center gap-2 text-white hover:text-amber-500 transition-colors group/link"
+                    >
+                        <span
+                            class="border-b border-white/20 pb-1 group-hover/link:border-amber-500"
+                            >Work with Gregory</span
+                        >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="group-hover/link:translate-x-1 transition-transform"
+                            ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"
+                            ></path></svg
+                        >
                     </a>
                 </div>
             </MindfulCard>
