@@ -1,20 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
+
 import Hero from "../components/Hero.astro";
 import ValueProp from "../components/ValueProp.astro";
-import Footer from "../components/Footer.astro";
+
 import siteData from "../data/site-data.json";
 
 const { site_info } = siteData;
 ---
 
 <Layout title={site_info.title} description={site_info.description}>
-	<Navbar />
 	<main>
 		<Hero />
 		<ValueProp />
 		<!-- Quick Links / Teasers could go here, but keeping it simple as per request -->
 	</main>
-	<Footer />
 </Layout>

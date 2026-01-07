@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
+
 import ServicesGrid from "../components/ServicesGrid.astro";
-import Footer from "../components/Footer.astro";
+
 import siteData from "../data/site-data.json";
 
 const { site_info } = siteData;
@@ -12,9 +12,7 @@ const { site_info } = siteData;
     title={`Services - ${site_info.title}`}
     description="Production, Mixing, and Session Work services."
 >
-    <Navbar />
     <main class="pt-20">
         <ServicesGrid />
     </main>
-    <Footer />
 </Layout>
