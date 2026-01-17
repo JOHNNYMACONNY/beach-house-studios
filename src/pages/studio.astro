@@ -1,97 +1,231 @@
-``` --- // Force rebuild: Studio Gallery Assets Fixed import Layout from
-"../layouts/Layout.astro"; import Navbar from "../components/Navbar.astro";
-import Amenities from "../components/Amenities.astro"; import siteData from
-"../data/site-data.json"; const { site_info } = siteData; --- <Layout
-title={`The Studio - ${site_info.title}`} description="Acoustically treated mix
-room, kitchen, and lounge access." > <main class="pt-20"> <Amenities /> {/*
-Placeholder for future Studio Pics gallery */} {/* Studio Gallery */} <section
-class="py-24 px-6 bg-[#0A0A0A] border-t border-white/5"> <div class="max-w-7xl
-mx-auto"> <div class="text-center mb-16"> <h2 class="font-display text-3xl
-md:text-4xl text-white mb-4" > The Space </h2> <p class="text-white/60 max-w-2xl
-mx-auto"> A creative environment designed for focus and flow. </p> </div> <!--
-Bento Box CSS Grid Gallery --> <div class="grid grid-cols-1 md:grid-cols-2
-lg:grid-cols-3 auto-rows-[200px] gap-4" > {/* Image 1: Mixing Desk - Tall */}
-<div class="row-span-2"> <div class="group relative rounded-2xl overflow-hidden
-bg-white/5 h-full" > <img src="/images/studio/studio-mixing-desk.jpg"
-alt="Studio Mixing Desk Setup" class="w-full h-full object-cover
-transition-transform duration-700 group-hover:scale-105" /> <div class="absolute
-inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0
-group-hover:opacity-100 transition-opacity duration-500" > </div> </div> </div>
-{/* Image 2: Drums Overhead - Short */} <div class="row-span-1"> <div
-class="group relative rounded-2xl overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-drums-overhead.jpg" alt="Drums Overhead View"
-class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> {/* Image 3: Wurlitzer -
-Tallest (Portrait) */} <div class="row-span-3"> <div class="group relative
-rounded-2xl overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-wurlitzer-side.jpg" alt="Wurlitzer Electric Piano
-Side Profile" class="w-full h-full object-cover transition-transform
-duration-700 group-hover:scale-105" /> <div class="absolute inset-0
-bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0
-group-hover:opacity-100 transition-opacity duration-500" > </div> </div> </div>
-{/* Image 4: Akai Reel - Short */} <div class="row-span-1"> <div class="group
-relative rounded-2xl overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-akai-reel.jpg" alt="Vintage Akai Reel-to-Reel"
-class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> {/* Image 5: Tascam &
-Push - Tall */} <div class="row-span-2"> <div class="group relative rounded-2xl
-overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-tascam-push.jpg" alt="Analog Tascam Mixer and Ableton
-Push" class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> {/* Image 6: Upright
-Piano - Short */} <div class="row-span-1"> <div class="group relative
-rounded-2xl overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-upright-piano.jpg" alt="Vintage Upright Piano"
-class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> {/* Image 7: Gear Rack -
-Wide Feature */} <div class="md:col-span-2 row-span-2"> <div class="group
-relative rounded-2xl overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-shelf-gear.jpg" alt="Outboard Gear and Microphones"
-class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> {/* Image 8: Drums Side
-- Short */} <div class="row-span-1"> <div class="group relative rounded-2xl
-overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-drums-side-view.jpg" alt="Drums Side View with Mic"
-class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> {/* Image 9: Wurlitzer
-Keys - Tall */} <div class="row-span-2"> <div class="group relative rounded-2xl
-overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-wurlitzer-keys.jpg" alt="Close up of Wurlitzer Keys"
-class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> {/* Image 10: Keys &
-Guitar - Short */} <div class="row-span-1"> <div class="group relative
-rounded-2xl overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-keys-guitar.jpg" alt="Keys and Guitar Headstock
-Detail" class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> {/* Image 11: Production
-Hands - Short */} <div class="row-span-1"> <div class="group relative
-rounded-2xl overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-production-hands.jpg" alt="Hands on Production
-Controller" class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> {/* Image 12: Keys
-Session - Tall */} <div class="row-span-2"> <div class="group relative
-rounded-2xl overflow-hidden bg-white/5 h-full" > <img
-src="/images/studio/studio-keys-session.jpg" alt="Keyboard Session in Progress"
-class="w-full h-full object-cover transition-transform duration-700
-group-hover:scale-105" /> <div class="absolute inset-0 bg-gradient-to-t
-from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100
-transition-opacity duration-500" > </div> </div> </div> </div> </div> </section>
-</main> </Layout>
+---
+// Force rebuild: Studio Gallery Assets Fixed
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Amenities from "../components/Amenities.astro";
+import siteData from "../data/site-data.json";
+
+const { site_info } = siteData;
+---
+
+<Layout
+    title={`The Studio - ${site_info.title}`}
+    description="Acoustically treated mix room, kitchen, and lounge access."
+>
+    <main class="pt-20">
+        <Amenities />
+        {/* Placeholder for future Studio Pics gallery */}
+        {/* Studio Gallery */}
+        <section class="py-24 px-6 bg-[#0A0A0A] border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2
+                        class="font-display text-3xl md:text-4xl text-white mb-4"
+                    >
+                        The Space
+                    </h2>
+                    <p class="text-white/60 max-w-2xl mx-auto">
+                        A creative environment designed for focus and flow.
+                    </p>
+                </div>
+                <!-- Bento Box CSS Grid Gallery -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] gap-4"
+                >
+                    {/* Image 1: Mixing Desk - Tall */}
+                    <div class="row-span-2">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-mixing-desk.jpg"
+                                alt="Studio Mixing Desk Setup"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 2: Drums Overhead - Short */}
+                    <div class="row-span-1">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-drums-overhead.jpg"
+                                alt="Drums Overhead View"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 3: Wurlitzer - Tallest (Portrait) */}
+                    <div class="row-span-3">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-wurlitzer-side.jpg"
+                                alt="Wurlitzer Electric Piano Side Profile"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 4: Akai Reel - Short */}
+                    <div class="row-span-1">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-akai-reel.jpg"
+                                alt="Vintage Akai Reel-to-Reel"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 5: Tascam & Push - Tall */}
+                    <div class="row-span-2">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-tascam-push.jpg"
+                                alt="Analog Tascam Mixer and Ableton Push"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 6: Upright Piano - Short */}
+                    <div class="row-span-1">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-upright-piano.jpg"
+                                alt="Vintage Upright Piano"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 7: Gear Rack - Wide Feature */}
+                    <div class="md:col-span-2 row-span-2">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-shelf-gear.jpg"
+                                alt="Outboard Gear and Microphones"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 8: Drums Side - Short */}
+                    <div class="row-span-1">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-drums-side-view.jpg"
+                                alt="Drums Side View with Mic"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 9: Wurlitzer Keys - Tall */}
+                    <div class="row-span-2">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-wurlitzer-keys.jpg"
+                                alt="Close up of Wurlitzer Keys"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 10: Keys & Guitar - Short */}
+                    <div class="row-span-1">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-keys-guitar.jpg"
+                                alt="Keys and Guitar Headstock Detail"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 11: Production Hands - Short */}
+                    <div class="row-span-1">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-production-hands.jpg"
+                                alt="Hands on Production Controller"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    {/* Image 12: Keys Session - Tall */}
+                    <div class="row-span-2">
+                        <div
+                            class="group relative rounded-2xl overflow-hidden bg-white/5 h-full"
+                        >
+                            <img
+                                src="/images/studio/studio-keys-session.jpg"
+                                alt="Keyboard Session in Progress"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
