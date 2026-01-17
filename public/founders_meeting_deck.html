@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Team Launch - Founders Meeting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+        :root {
+            --bg-image: url('./assets/beach_house_slide_bg.png');
+            --text-color: #F5F5F0;
+            /* Off-white */
+            --accent-color: #D4AF37;
+            /* Muted Gold */
+            --glass-bg: rgba(0, 0, 0, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .deck-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 8rem;
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Glassmorphism Card Effect */
+        .content-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 2rem;
+        }
+
+        li {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-weight: 300;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1.3rem;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .controls {
+            position: absolute;
+            bottom: 2rem;
+            right: 4rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        button:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #000;
+        }
+
+        .slide-counter {
+            position: absolute;
+            bottom: 3rem;
+            left: 4rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            opacity: 0.6;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 2rem;
+            }
+
+            .content-card {
+                padding: 2rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="deck-container">
+
+        <!-- SLIDE 1: TITLE -->
+        <div class="slide active">
+            <div class="content-card">
+                <h2 style="border: none; padding: 0;">FOUNDERS ALIGNMENT</h2>
+                <h1>Production Team Launch</h1>
+                <p>From "Creative Collective" to <span class="highlight">Full-Service Studio</span>.</p>
+                <br>
+                <p><strong>Goal of this meeting:</strong></p>
+                <ul>
+                    <li>Align on the Business Model</li>
+                    <li>Define Roles & Decision Power</li>
+                    <li>Solve the "Revenue & Equity" Question</li>
+                    <li>Agree on the First Test Client</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: THE OPPORTUNITY -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>The Opportunity</h2>
+                <h3>"Artist Development doesn't exist anymore."</h3>
+                <p><em>— Greg's validated insight</em></p>
+
+                <p><strong>The Gap:</strong></p>
+                <ul>
+                    <li>Major labels are hedge funds. They want "pre-packaged" products.</li>
+                    <li>Independent artists are lost. Talent without strategy.</li>
+                    <li><strong>The Market:</strong> $2.7B (2024) → Projected $6.9B (2031).</li>
+                </ul>
+
+                <br>
+                <p><strong>Our Position:</strong><br>
+                    We fill the gap between "DIY in bedroom" and "Major Label Sign-off."<br>
+                    We are the <span class="highlight">mediator</span> between the artist's ego and the market's
+                    reality.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: SERVICE TIERS -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>The Product (Service Tiers)</h2>
+
+                <h3>1. Launch Ready ($1,500 - $2,500)</h3>
+                <p><em>For artists with music but no identity.</em><br>
+                    Includes: Brand Identity, Photoshoot, 3-Month Content Plan, Social Strategy.</p>
+
+                <h3>2. Full Release ($3,500 - $5,000)</h3>
+                <p><em>For artists launching a single or EP.</em><br>
+                    Includes: All of Tier 1 + Mixing/Mastering, Music Video, Merch (3 items), Distro.</p>
+
+                <h3>3. Career Development ($7,500+)</h3>
+                <p><em>For artists ready to go pro.</em><br>
+                    Includes: Full Album, PR Strategy, Business Mgmt, A&R Guidance.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: SELECTION CRITERIA -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>Artist Selection Criteria</h2>
+
+                <h3>Who We Work With (Unanimous Vote):</h3>
+                <ul>
+                    <li>✅ <strong>A&Rs / "Double Threats":</strong> Producers/Engineers who understand the grind.</li>
+                    <li>✅ <strong>7+ Year Veterans:</strong> Projects with staying power needing a refresh.</li>
+                    <li>✅ <strong>Self-Funded:</strong> Artists investing in themselves (CEO mindset).</li>
+                </ul>
+
+                <h3>Who We AVOID:</h3>
+                <ul>
+                    <li>❌ <strong>"Fix Me" Artists:</strong> Needing us to be their entire brain.</li>
+                    <li>❌ <strong>Broke/Exposure:</strong> "I'll pay when I blow up." (Hard No).</li>
+                    <li>❌ <strong>Committee Risks:</strong> If we don't ALL agree, we pass.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: THE TEAM -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>The Founders Team</h2>
+
+                <ul>
+                    <li><strong>Greg</strong> (Executive Producer / Studio Owner)<br>
+                        <span class="highlight">The Anchor.</span> Final say on partnerships. "The Ear."
+                    </li>
+
+                    <li><strong>Johnny</strong> (Tech Lead / Chief Engineer)<br>
+                        <span class="highlight">The Engine.</span> Mixing, Tech Infrastructure, Systems.
+                    </li>
+
+                    <li><strong>Thalita</strong> (Brand Director)<br>
+                        <span class="highlight">The Image.</span> Visual identity, styling, creative direction.
+                    </li>
+
+                    <li><strong>Adrian</strong> (Business Lead)<br>
+                        <span class="highlight">The Shield.</span> Contracts, legal, financial structure.
+                    </li>
+
+                    <li><strong>Melissa</strong> (A&R / Talent Dev)<br>
+                        <span class="highlight">The Scout.</span> Finding and developing raw talent.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: REVENUE MODEL -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>The "Elephant in the Room"</h2>
+
+                <h3>Greg's Concern:</h3>
+                <p>"We need financial infrastructure to handle equity properly."</p>
+
+                <h3>The Proposal:</h3>
+                <ul>
+                    <li><strong>1. Operating Expenses (~80%):</strong> Studio overhead, equipment, costs.</li>
+                    <li><strong>2. Equity Pool (~20%):</strong> Split among active contributors.</li>
+                    <li><strong>3. The "Adrian" Factor:</strong> We need a CPA/Legal structure to manage risk.</li>
+                </ul>
+
+                <br>
+                <p class="highlight"
+                    style="font-size: 1.6rem; text-align: center; border: 1px solid var(--accent-color); padding: 1rem;">
+                    HARD RULE: No work starts without a deposit.
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: NEXT STEPS -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>Next Steps & Assignments</h2>
+
+                <ul>
+                    <li><strong>Legal/Finance:</strong> Adrian to research CPA/Attorney for Operating Agreement.</li>
+                    <li><strong>Web/Tech:</strong> Bobby to buy <code>beachhousestudiosla.com</code> & setup emails.
+                    </li>
+                </ul>
+
+                <h3>The Test Client</h3>
+                <p><strong>Goal:</strong> Identify ONE artist we all agree on.</p>
+                <p><strong>Action:</strong> Launch them in the next 30 days.</p>
+            </div>
+        </div>
+
+        <div class="slide-counter">SLIDE <span id="current">1</span> / <span id="total">7</span></div>
+
+        <div class="controls">
+            <button onclick="prevSlide()">←</button>
+            <button onclick="nextSlide()">→</button>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const currentEl = document.getElementById('current');
+        const totalEl = document.getElementById('total');
+
+        totalEl.textContent = totalSlides;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            currentEl.textContent = index + 1;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+---
+import siteData from "../data/site-data.json";
+
+const navLinks = [
+    { name: "Services", href: "/services" },
+    { name: "Gear", href: "/gear" },
+    { name: "Studio", href: "/studio" },
+    { name: "Mentorship", href: "/mentorship" }, // Added based on context
+    { name: "About", href: "/about" },
+];
+
+const { site_info } = siteData;
+---
+
+<!-- Mobile Navigation Container -->
+<div class="md:hidden">
+    <!-- Top Center Floating Pill -->
+    <button
+        id="mobile-nav-trigger"
+        class="fixed top-5 left-1/2 -translate-x-1/2 z-[60] group flex items-center gap-3 px-5 h-10 bg-white/10 backdrop-blur-md border border-white/10 rounded-full shadow-2xl hover:bg-white/20 transition-all duration-300 active:scale-95 touch-manipulation"
+        aria-label="Open Menu"
+        aria-expanded="false"
+    >
+        <span class="font-display text-sm tracking-widest text-white mt-0.5"
+            >MENU</span
+        >
+        <!-- Icon: Simple Dual Line (Abstract Hamburger) -->
+        <div
+            class="relative w-5 h-2.5 flex flex-col justify-between overflow-hidden"
+        >
+            <span
+                class="w-full h-[1.5px] bg-white transform transition-transform duration-300 origin-center group-aria-expanded:rotate-45 group-aria-expanded:translate-y-[4px]"
+            ></span>
+            <span
+                class="w-full h-[1.5px] bg-white transform transition-transform duration-300 origin-center group-aria-expanded:-rotate-45 group-aria-expanded:-translate-y-[4px]"
+            ></span>
+        </div>
+    </button>
+
+    <!-- Full Screen Overlay -->
+    <div
+        id="mobile-menu-overlay"
+        class="fixed inset-0 z-50 bg-[#050505] text-[#F5F5F5] opacity-0 pointer-events-none transition-opacity duration-500 flex flex-col items-center justify-center overflow-hidden"
+    >
+        <!-- Background Noise/Grain (Optional subtle texture) -->
+        <div
+            class="absolute inset-0 opacity-[0.03] pointer-events-none"
+            style="background-image: url('/noise.png');"
+        >
+        </div>
+
+        <!-- Navigation Links -->
+        <nav
+            class="relative z-10 flex flex-col items-center gap-6 sm:gap-8 w-full px-6"
+        >
+            {
+                navLinks.map((link, index) => (
+                    <a
+                        href={link.href}
+                        class="mobile-nav-link block font-display text-5xl sm:text-6xl text-center text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 hover:to-amber-400 transition-all duration-500 transform translate-y-8 opacity-0"
+                        style={`transition-delay: ${100 + index * 50}ms`}
+                    >
+                        {link.name}
+                    </a>
+                ))
+            }
+
+            <!-- Special CTA (distinct style) -->
+            <div
+                class="mobile-nav-link mt-8 transform translate-y-8 opacity-0"
+                style={`transition-delay: ${100 + navLinks.length * 50}ms`}
+            >
+                <a
+                    href={site_info.booking_url}
+                    class="inline-block px-10 py-3 rounded-full border border-amber-500/20 bg-amber-500/10 text-amber-500 text-sm uppercase tracking-widest font-bold hover:bg-amber-500/20 hover:border-amber-500/50 hover:text-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all duration-300 backdrop-blur-sm"
+                >
+                    Book Session
+                </a>
+            </div>
+        </nav>
+
+        <!-- Decorative Footer info -->
+        <div
+            class="absolute bottom-8 left-0 w-full text-center text-white/20 text-xs uppercase tracking-widest opacity-0 transition-opacity duration-700 delay-500"
+            id="menu-footer"
+        >
+            The Beach House &copy; {new Date().getFullYear()}
+        </div>
+    </div>
+</div>
+
+<script>
+    const trigger = document.getElementById("mobile-nav-trigger");
+    const overlay = document.getElementById("mobile-menu-overlay");
+    const links = document.querySelectorAll(".mobile-nav-link");
+    const footer = document.getElementById("menu-footer");
+    let isOpen = false;
+
+    function toggleMenu() {
+        isOpen = !isOpen;
+
+        // Toggle Attributes
+        trigger?.setAttribute("aria-expanded", isOpen.toString());
+
+        if (isOpen) {
+            // OPEN STATE
+            if (overlay) {
+                overlay.classList.remove("opacity-0", "pointer-events-none");
+                overlay.classList.add("opacity-100", "pointer-events-auto");
+            }
+
+            // Staggered Animation In
+            if (footer) footer.classList.remove("opacity-0");
+            links.forEach((link) => {
+                link.classList.remove("translate-y-8", "opacity-0");
+            });
+
+            // Prevent scrolling on body
+            document.body.style.overflow = "hidden";
+        } else {
+            // CLOSE STATE
+            if (overlay) {
+                overlay.classList.remove("opacity-100", "pointer-events-auto");
+                overlay.classList.add("opacity-0", "pointer-events-none");
+            }
+
+            // Reset Animation
+            if (footer) footer.classList.add("opacity-0");
+            links.forEach((link) => {
+                link.classList.add("translate-y-8", "opacity-0");
+            });
+
+            // Restore scrolling
+            document.body.style.overflow = "";
+        }
+    }
+
+    trigger?.addEventListener("click", toggleMenu);
+
+    // Close on link click
+    links.forEach((link) => {
+        link.addEventListener("click", toggleMenu);
+    });
+</script>
