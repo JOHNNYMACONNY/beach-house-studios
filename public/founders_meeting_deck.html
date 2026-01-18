@@ -179,22 +179,61 @@
             letter-spacing: 2px;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            body {
+                height: 100dvh;
+                /* Mobile viewport height fix */
+            }
+
             .slide {
-                padding: 2rem;
+                padding: 1rem;
+                overflow-y: auto;
+                /* Allow scrolling on mobile */
+                justify-content: flex-start;
+                /* Start from top */
+                padding-top: 4rem;
+                /* Space for top items */
             }
 
             .content-card {
-                padding: 2rem;
+                padding: 1.5rem;
+                margin-bottom: 4rem;
+                /* Space for controls */
             }
 
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             h2 {
-                font-size: 2rem;
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+                margin-top: 1.5rem;
+            }
+
+            p,
+            li {
+                font-size: 1.1rem;
+            }
+
+            .controls {
+                bottom: 1rem;
+                right: 1rem;
+                background: rgba(0, 0, 0, 0.5);
+                /* Background for visibility */
+                padding: 0.5rem;
+                border-radius: 20px;
+            }
+
+            .slide-counter {
+                bottom: 1.5rem;
+                left: 1.5rem;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -210,14 +249,6 @@
                 <h2 style="border: none; padding: 0;">LEADERSHIP ALIGNMENT</h2>
                 <h1>Production Team Launch</h1>
                 <p>From "Creative Collective" to <span class="highlight">Full-Service Studio</span>.</p>
-                <br>
-                <p><strong>Goal of this meeting:</strong></p>
-                <ul>
-                    <li>Align on the Business Model</li>
-                    <li>Define Roles & Decision Power</li>
-                    <li>Solve the "Revenue & Equity" Question</li>
-                    <li>Agree on the First Test Client</li>
-                </ul>
             </div>
         </div>
 
@@ -225,10 +256,8 @@
         <div class="slide">
             <div class="content-card">
                 <h2>The Opportunity</h2>
-                <h3>"Artist Development doesn't exist anymore."</h3>
-                <p><em>— Greg's validated insight</em></p>
+                <p><strong>"Artist Development doesn't exist anymore."</strong><br><em>— Greg's Insight</em></p>
 
-                <p><strong>The Gap:</strong></p>
                 <ul>
                     <li>Major labels are hedge funds. They want "pre-packaged" products.</li>
                     <li>Independent artists are lost. Talent without strategy.</li>
@@ -237,7 +266,6 @@
 
                 <br>
                 <p><strong>Our Position:</strong><br>
-                    We fill the gap between "DIY in bedroom" and "Major Label Sign-off."<br>
                     We are the <span class="highlight">mediator</span> between the artist's ego and the market's
                     reality.</p>
             </div>
@@ -246,146 +274,121 @@
         <!-- SLIDE 3: SERVICE TIERS -->
         <div class="slide">
             <div class="content-card">
-                <h2>The Product (Service Tiers)</h2>
+                <h2>The Product (Services)</h2>
 
-                <h3>1. Launch Ready ($1,500 - $2,500)</h3>
-                <p><em>For artists with music but no identity.</em><br>
-                    Includes: Brand Identity, Photoshoot, 3-Month Content Plan, Social Strategy.</p>
+                <h3>Tier 1: The "Production Team" (Packaged Dev)</h3>
+                <p><em>Turnkey Artist Development.</em><br>
+                    Full-service: Brand, Video, Production, Strategy.<br>
+                    <strong>Price:</strong> $1,500 - $10,000+ per project.
+                </p>
 
-                <h3>2. Full Release ($3,500 - $5,000)</h3>
-                <p><em>For artists launching a single or EP.</em><br>
-                    Includes: All of Tier 1 + Mixing/Mastering, Music Video, Merch (3 items), Distro.</p>
-
-                <h3>3. Career Development ($7,500+)</h3>
-                <p><em>For artists ready to go pro.</em><br>
-                    Includes: Full Album, PR Strategy, Business Mgmt, A&R Guidance.</p>
-            </div>
-        </div>
-
-        <!-- SLIDE 4: SELECTION CRITERIA -->
-        <div class="slide">
-            <div class="content-card">
-                <h2>Artist Selection Criteria</h2>
-
-                <h3>Who We Work With (Unanimous Vote):</h3>
-                <ul>
-                    <li>✅ <strong>A&Rs / "Double Threats":</strong> Producers/Engineers who understand the grind.</li>
-                    <li>✅ <strong>7+ Year Veterans:</strong> Projects with staying power needing a refresh.</li>
-                    <li>✅ <strong>Self-Funded:</strong> Artists investing in themselves (CEO mindset).</li>
-                </ul>
-
-                <h3>Who We AVOID:</h3>
-                <ul>
-                    <li>❌ <strong>"Fix Me" Artists:</strong> Needing us to be their entire brain.</li>
-                    <li>❌ <strong>Broke/Exposure:</strong> "I'll pay when I blow up." (Hard No).</li>
-                    <li>❌ <strong>Committee Risks:</strong> If we don't ALL agree, we pass.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SLIDE 5: THE TEAM -->
-        <div class="slide">
-            <div class="content-card">
-                <h2>The Core Leadership Team</h2>
-
-                <ul>
-                    <li><strong>Greg</strong> (Executive Producer / Studio Owner)<br>
-                        <span class="highlight">The Anchor.</span> Final say on partnerships. "The Ear."
-                    </li>
-
-                    <li><strong>Johnny</strong> (Tech Lead / Chief Engineer)<br>
-                        <span class="highlight">The Engine.</span> Mixing, Tech Infrastructure, Systems.
-                    </li>
-
-                    <li><strong>Thalita</strong> (Brand Director)<br>
-                        <span class="highlight">The Image.</span> Visual identity, styling, creative direction.
-                    </li>
-
-                    <li><strong>Adrian</strong> (Business Lead)<br>
-                        <span class="highlight">The Shield.</span> Contracts, legal, financial structure.
-                    </li>
-
-                    <li><strong>Melissa</strong> (A&R / Talent Dev)<br>
-                        <span class="highlight">The Scout.</span> Finding and developing raw talent.
-                    </li>
-
-                    <li><strong>Theo</strong> (Producer / Vocal Specialist)<br>
-                        <span class="highlight">The Composer.</span> Vocal production, song structure, West Coast sound.
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SLIDE 6: REVENUE MODEL -->
-        <div class="slide">
-            <div class="content-card">
-                <h2>Revenue Split Model</h2>
-
-                <h3>Core Principle: "Active Contributors Get Paid"</h3>
-                <p>Only people who work on a project get paid from that project.</p>
-
-                <h3>The Formula:</h3>
-                <ul>
-                    <li><strong>Greg (Studio):</strong> 20-30% — Overhead, gear, space, oversight</li>
-                    <li><strong>Team Fund:</strong> 10% — Marketing, growth, shared resources</li>
-                    <li><strong>Active Contributors:</strong> 60-70% — Split among whoever works</li>
-                </ul>
-
-                <h3>Example: $5,000 Full Package</h3>
-                <ul style="font-size: 1.1rem;">
-                    <li>Greg: $1,000 (20%)</li>
-                    <li>Johnny (Mixing): $1,250 (25%)</li>
-                    <li>Thalita (Branding): $1,250 (25%)</li>
-                    <li>Benny (Video): $1,000 (20%)</li>
-                    <li>Team Fund: $500 (10%)</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SLIDE 7: PILOT PHASE -->
-        <div class="slide">
-            <div class="content-card">
-                <h2>How We're Structuring This</h2>
-
-                <h3>Phase 1: Pilot (First 3 Months)</h3>
-                <ul>
-                    <li>Project-based revenue splits (no equity yet)</li>
-                    <li>Clear decision domains (who decides what)</li>
-                    <li>Unanimous vote on client selection</li>
-                    <li>Monthly check-ins to adjust what's not working</li>
-                </ul>
-
-                <h3>Phase 2: Formalize (After 3 Months)</h3>
-                <ul>
-                    <li>If the model works → formalize with LLC/partnership</li>
-                    <li>If it doesn't → adjust or dissolve, no hard feelings</li>
-                </ul>
-
-                <br>
-                <p class="highlight" style="font-size: 1.4rem; text-align: center;">
-                    <strong>Why:</strong> Flexibility to pivot without legal drama.
+                <h3>Tier 2: The Network (Resource Access)</h3>
+                <p><em>Access to our vetted ecosystem.</em><br>
+                    Studios, Engineers, Video Editors, PR, Photographers.<br>
+                    <strong>Model:</strong> A la carte bookings or Referral fees.
                 </p>
             </div>
         </div>
 
-        <!-- SLIDE 8: NEXT STEPS -->
+        <!-- SLIDE 4: THE INTAKE PROCESS -->
         <div class="slide">
             <div class="content-card">
-                <h2>Next Steps & Assignments</h2>
+                <h2>The Intake Process</h2>
+                <p><em>How we lock in clients (Monthly Cycle).</em></p>
 
                 <ul>
-                    <li><strong>Legal/Finance:</strong> Adrian to research CPA/Attorney for Operating Agreement.</li>
-                    <li><strong>Web/Tech:</strong> Bobby to buy <code>beachhousestudiosla.com</code> & setup emails.
-                    </li>
+                    <li><strong>1. The "Open House":</strong> Monthly intake meeting. Invite potential clients to
+                        pitch/vibe.</li>
+                    <li><strong>2. Founder Strategy Session:</strong> Private intake meeting with Core Team to review
+                        candidates.</li>
+                    <li><strong>3. The Vote:</strong> Unanimous decision required. If we all agree, they're in.</li>
+                    <li><strong>4. Lock-In:</strong> Deposit paid, timeline set, execution begins.</li>
                 </ul>
-
-                <h3>The Test Client</h3>
-                <p><strong>Goal:</strong> Identify ONE artist we all agree on.</p>
-                <p><strong>Action:</strong> Launch them in the next 30 days.</p>
             </div>
         </div>
 
-        <div class="slide-counter">SLIDE <span id="current">1</span> / <span id="total">8</span></div>
+        <!-- SLIDE 5: CRITERIA -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>Selection Criteria</h2>
+
+                <h3>Unanimous Vote Required:</h3>
+                <ul>
+                    <li>✅ <strong>Double Threats:</strong> Producers/Engineers who understand the grind.</li>
+                    <li>✅ <strong>7+ Year Veterans:</strong> Projects with staying power.</li>
+                    <li>✅ <strong>Self-Funded:</strong> CEO mindset.</li>
+                </ul>
+
+                <h3>Hard Pass ❌:</h3>
+                <ul>
+                    <li>"Fix Me" Artists (Need a brain transplant)</li>
+                    <li>Broke/Exposure ("Pay you when I blow up")</li>
+                    <li>Committee Risks (No consensus = No go)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: THE CORE TEAM -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>The Core Leadership Team</h2>
+                <ul style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <li><strong>Greg</strong><br><span class="highlight">The Anchor</span> (Exec)</li>
+                    <li><strong>Johnny</strong><br><span class="highlight">The Engine</span> (Tech)</li>
+                    <li><strong>Thalita</strong><br><span class="highlight">The Image</span> (Brand)</li>
+                    <li><strong>Adrian</strong><br><span class="highlight">The Shield</span> (Biz)</li>
+                    <li><strong>Melissa</strong><br><span class="highlight">The Scout</span> (A&R)</li>
+                    <li><strong>Theo</strong><br><span class="highlight">The Composer</span> (Music)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: REVENUE MODEL -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>Revenue Split Model</h2>
+                <h3>Principle: "Active Contributors Get Paid"</h3>
+
+                <ul>
+                    <li><strong>Greg (Studio):</strong> 20-30% (Overhead)</li>
+                    <li><strong>Team Fund:</strong> 10% (Growth)</li>
+                    <li><strong>Active Contributors:</strong> 60-70% (Split by work)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: STRUCTURE -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>Structure: Pilot Phase</h2>
+
+                <h3>Phase 1: Validation (3 Months)</h3>
+                <ul>
+                    <li>Project-based splits (No equity yet)</li>
+                    <li>Monthly Check-ins</li>
+                    <li>Goal: Launch 1 Test Client</li>
+                </ul>
+
+                <h3>Phase 2: Formalize</h3>
+                <ul>
+                    <li>LLC/Partnership (If successful)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: NEXT STEPS -->
+        <div class="slide">
+            <div class="content-card">
+                <h2>Next Steps</h2>
+                <ul>
+                    <li>1. <strong>Legal:</strong> Research Operating Agreement (Adrian)</li>
+                    <li>2. <strong>Tech:</strong> Setup <code>beachhousestudiosla.com</code> (Johnny)</li>
+                    <li>3. <strong>Action:</strong> Schedule First "Open House" Intake</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide-counter">SLIDE <span id="current">1</span> / <span id="total">9</span></div>
 
         <div class="controls">
             <button onclick="prevSlide()">←</button>
